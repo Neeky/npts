@@ -1,7 +1,12 @@
 # -*- coding: utf8 -*-
 
+"""cpu 监控项的建模
 
-import logging
+作者: 蒋乐兴|neeky
+日期: 2022-01-21
+邮件: 1721900707@qq.com|neeky@live.com
+"""
+
 from datetime import datetime
 from dataclasses import dataclass
 
@@ -23,5 +28,3 @@ class CpuTimes(object):
         """
         if self.gather_at is None:
             self.gather_at = datetime.now()
-    
-

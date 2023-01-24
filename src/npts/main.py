@@ -31,6 +31,8 @@ def main():
         start_daemon("/tmp/npts-daemon.pid")
     elif args.action == 'stop':
         stop_daemon('/tmp/npts-daemon.pid')
+    else:
+        return 0
     
     # 配置日志
     logfile="/tmp/npts-daemon.log"

@@ -8,13 +8,16 @@
 """
 
 import psutil
-from collections import deque
 
 from npts.models.cpu import CpuTimes
 
 
 def current_cpu_times():
     """返回当前 cpu 的耗时信息
+
+    Return
+    ------
+        CpuTimes
     """
     # 核心数量
     cores = psutil.cpu_count()
@@ -24,7 +27,6 @@ def current_cpu_times():
 
     # 其它监控项
     current_cpu_time = psutil.cpu_times_percent()
-
     user = current_cpu_time.user
     system = current_cpu_time.system
     idle = current_cpu_time.idle
@@ -34,5 +36,5 @@ def current_cpu_times():
         iowait = current_cpu_time.iowait
         softirq = current_cpu_time.softirq
     
-    # 创建 CpuTimes 对象并保存到队列
+    # 创建 CpuTimes 对象并返回
     return CpuTimes(cores=cores, frequency=frequency, user=user, system=system, idle=idle, iowait=iowait, softirq=softirq)

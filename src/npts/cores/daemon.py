@@ -1,5 +1,11 @@
 # -*- coding: utf8 -*-
 
+"""实现服务进程相关的逻辑
+
+作者: 蒋乐兴|neeky
+日期: 2022-01-21
+邮件: 1721900707@qq.com|neeky@live.com
+"""
 
 import os
 import sys
